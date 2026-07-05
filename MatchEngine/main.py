@@ -1,4 +1,5 @@
 import random
+from collections import defaultdict
 from team import Team
 from engine import MatchEngine
 from table import Table
@@ -15,7 +16,7 @@ teams = [
     Team("Coventry", 7),
     Team("Crystal Palace", 9),
     Team("Everton", 11),
-    Team("Fulham", 12),
+    Team("Fulham", 11),
     Team("Hull", 5),
     Team("Ipswich", 6),
     Team("Leeds", 8),
@@ -27,7 +28,33 @@ teams = [
     Team("Sunderland", 10),
     Team("Tottenham", 12)]
 
-table, results = engine.simulate_season(teams)
+tables = []
+title_wins = defaultdict(int)
 
-Table.print_table(table)
+for i in range (0, 10):
+    table, results = engine.simulate_season(teams)
+    tables.append(table)
+
+    winner = max(table.values(), key=lambda entry: entry.points)
+    title_wins[winner.team.name] += 1
+
+highest_points = 0
+
+for i, table in enumerate(tables, 1):
+    winner = max(table.values(), key=lambda entry: entry.points)
+
+    if winner.points > highest_points:
+        highest_points = winner.points
+
+    year = 2026 + i
+
+    print(f"Season {year}/{year+1}: Winner = {winner.team.name} ({winner.points} pts)")
+
+
+print("\n=== TITLE COUNTS ===")
+
+for team, wins in sorted(title_wins.items(), key=lambda x: x[1], reverse=True):
+    print(f"{team}: {wins} titles")
+
+print(f"\nHighest points tally in a season: {highest_points}");
 
