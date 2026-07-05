@@ -4,7 +4,7 @@ from engine import MatchEngine
 
 engine = MatchEngine()
 
-home_team = Team("Wolves", 5)
+home_team = Team("Wolves", 10)
 away_team = Team("Man City", 20)
 
 for i in range(0, 10):
