@@ -21,6 +21,7 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="engine.py" />
     <Compile Include="main.py" />
     <Compile Include="result.py" />
     <Compile Include="team.py" />
