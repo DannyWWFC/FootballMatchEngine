@@ -1,0 +1,85 @@
+[
+    {
+        "name": "AFC Bournemouth",
+        "strength": 13
+    },
+    {
+        "name": "Arsenal",
+        "strength": 22
+    },
+    {
+        "name": "Aston Villa",
+        "strength": 18
+    },
+    {
+        "name": "Brentford",
+        "strength": 15
+    },
+    {
+        "name": "Brighton",
+        "strength": 16
+    },
+
+    {
+        "name": "Chelsea",
+        "strength": 18
+    },
+    {
+        "name": "Coventry",
+        "strength": 10
+    },
+    {
+        "name": "Crystal Palace",
+        "strength": 14
+    },
+    {
+        "name": "Everton",
+        "strength": 13
+    },
+    {
+        "name": "Fulham",
+        "strength": 14
+    },
+
+    {
+        "name": "Hull",
+        "strength": 8
+    },
+    {
+        "name": "Ipswich",
+        "strength": 11
+    },
+    {
+        "name": "Leeds",
+        "strength": 16
+    },
+    {
+        "name": "Liverpool",
+        "strength": 22
+    },
+    {
+        "name": "Man City",
+        "strength": 24
+    },
+
+    {
+        "name": "Man United",
+        "strength": 19
+    },
+    {
+        "name": "Newcastle",
+        "strength": 17
+    },
+    {
+        "name": "Nottm. Forest",
+        "strength": 12
+    },
+    {
+        "name": "Sunderland",
+        "strength": 12
+    },
+    {
+        "name": "Tottenham",
+        "strength": 18
+    }
+]

@@ -1,0 +1,102 @@
+[
+    {
+        "name": "Birmingham City",
+        "strength": 10
+    },
+    {
+        "name": "Blackburn Rovers",
+        "strength": 11
+    },
+    {
+        "name": "Bolton Wanderers",
+        "strength": 10
+    },
+    {
+        "name": "Bristol City",
+        "strength": 11
+    },
+    {
+        "name": "Burnley",
+        "strength": 12
+    },
+
+    {
+        "name": "Cardiff City",
+        "strength": 9
+    },
+    {
+        "name": "Charlton Athletic",
+        "strength": 9
+    },
+    {
+        "name": "Derby County",
+        "strength": 10
+    },
+    {
+        "name": "Lincoln City",
+        "strength": 8
+    },
+    {
+        "name": "Middlesbrough",
+        "strength": 12
+    },
+
+    {
+        "name": "Millwall",
+        "strength": 11
+    },
+    {
+        "name": "Norwich City",
+        "strength": 12
+    },
+    {
+        "name": "Portsmouth",
+        "strength": 11
+    },
+    {
+        "name": "Preston North End",
+        "strength": 11
+    },
+    {
+        "name": "Queens Park Rangers",
+        "strength": 10
+    },
+
+    {
+        "name": "Sheffield United",
+        "strength": 12
+    },
+    {
+        "name": "Stoke City",
+        "strength": 11
+    },
+    {
+        "name": "Swansea City",
+        "strength": 10
+    },
+    {
+        "name": "Watford",
+        "strength": 11
+    },
+    {
+        "name": "West Bromwich Albion",
+        "strength": 12
+    },
+
+    {
+        "name": "West Ham United",
+        "strength": 13
+    },
+    {
+        "name": "Wolverhampton Wanderers",
+        "strength": 13
+    },
+    {
+        "name": "Wrexham",
+        "strength": 11
+    },
+    {
+        "name": "Southampton",
+        "strength": 11
+    }
+]

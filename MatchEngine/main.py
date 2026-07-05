@@ -1,4 +1,5 @@
 import random
+import json
 from collections import defaultdict
 from team import Team
 from engine import MatchEngine
@@ -6,32 +7,18 @@ from table import Table
 
 engine = MatchEngine()
 
+with open("leagues/championship.json", "r") as f:
+    team_data = json.load(f)
+
 teams = [
-    Team("AFC Bournemouth", 10),
-    Team("Arsenal", 18),
-    Team("Aston Villa", 14),
-    Team("Brentford", 11),
-    Team("Brighton", 10),
-    Team("Chelsea", 16),
-    Team("Coventry", 7),
-    Team("Crystal Palace", 9),
-    Team("Everton", 11),
-    Team("Fulham", 11),
-    Team("Hull", 5),
-    Team("Ipswich", 6),
-    Team("Leeds", 8),
-    Team("Liverpool", 17),
-    Team("Man City", 19),
-    Team("Man United", 16),
-    Team("Newcastle", 12),
-    Team("Nottm. Forest", 8),
-    Team("Sunderland", 10),
-    Team("Tottenham", 12)]
+    Team(item["name"], item["strength"])
+    for item in team_data
+]
 
 tables = []
 title_wins = defaultdict(int)
 
-for i in range (0, 10):
+for i in range (0, 100):
     table, results = engine.simulate_season(teams)
     tables.append(table)
 
