@@ -1,6 +1,8 @@
 import numpy as np
+from itertools import combinations
 from team import Team
 from result import MatchResult
+from table import Table, TableEntry
 
 MIN_XG = 0.5
 GOAL_SCALE = 3.0
@@ -33,3 +35,25 @@ class MatchEngine:
         away_goals = np.random.poisson(away_xg)
 
         return MatchResult(home_team, away_team, home_goals, away_goals)
+
+    def generate_fixtures(self, teams):
+        fixtures = []
+
+        for home, away in combinations(teams, 2):
+            fixtures.append((home, away))  # home leg
+            fixtures.append((away, home))  # away leg
+
+        return fixtures
+
+    def simulate_season(self, teams):
+        fixtures = self.generate_fixtures(teams)
+
+        table = {team.name: TableEntry(team) for team in teams}
+        results = []
+
+        for home, away in fixtures:
+            result = self.simulate_match(home, away)
+            results.append(result)
+            Table.update_table(table, result)
+
+        return table, results

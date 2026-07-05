@@ -24,6 +24,7 @@
     <Compile Include="engine.py" />
     <Compile Include="main.py" />
     <Compile Include="result.py" />
+    <Compile Include="table.py" />
     <Compile Include="team.py" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />

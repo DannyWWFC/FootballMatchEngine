@@ -1,54 +1,33 @@
 import random
 from team import Team
 from engine import MatchEngine
+from table import Table
 
 engine = MatchEngine()
 
-home_team = Team("Wolves", 10)
-away_team = Team("Man City", 20)
+teams = [
+    Team("AFC Bournemouth", 10),
+    Team("Arsenal", 18),
+    Team("Aston Villa", 14),
+    Team("Brentford", 11),
+    Team("Brighton", 10),
+    Team("Chelsea", 16),
+    Team("Coventry", 7),
+    Team("Crystal Palace", 9),
+    Team("Everton", 11),
+    Team("Fulham", 12),
+    Team("Hull", 5),
+    Team("Ipswich", 6),
+    Team("Leeds", 8),
+    Team("Liverpool", 17),
+    Team("Man City", 19),
+    Team("Man United", 16),
+    Team("Newcastle", 12),
+    Team("Nottm. Forest", 8),
+    Team("Sunderland", 11),
+    Team("Tottenham", 12)]
 
-for i in range(0, 10):
-    results = []
+table, results = engine.simulate_season(teams)
 
-    for i in range(0, 1000):
-        result = engine.simulate_match(home_team, away_team)
-        results.append(result)
+Table.print_table(table)
 
-    total_home_goals = 0
-    total_away_goals = 0
-
-    highest_home_win = None
-    highest_home_margin = -1
-
-    highest_away_win = None
-    highest_away_margin = -1
-
-    for r in results:
-        total_home_goals += r.home_goals
-        total_away_goals += r.away_goals
-
-        # Home win
-        margin = r.home_goals - r.away_goals
-        if margin > highest_home_margin:
-            highest_home_margin = margin
-            highest_home_win = r
-
-        # Away win
-        away_margin = r.away_goals - r.home_goals
-        if away_margin > highest_away_margin:
-            highest_away_margin = away_margin
-            highest_away_win = r
-
-    avg_home_goals = total_home_goals / len(results)
-    avg_away_goals = total_away_goals / len(results)
-
-    print("=== STATS ===\n")
-
-    print(f"Average home goals: {avg_home_goals:.2f}")
-    print(f"Average away goals: {avg_away_goals:.2f}\n")
-
-    print("Biggest home win:")
-    print(highest_home_win)
-
-    print("\nBiggest away win:")
-    print(f"{highest_away_win}\n")
