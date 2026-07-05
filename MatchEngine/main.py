@@ -24,7 +24,7 @@ teams = [
     Team("Man United", 16),
     Team("Newcastle", 12),
     Team("Nottm. Forest", 8),
-    Team("Sunderland", 11),
+    Team("Sunderland", 10),
     Team("Tottenham", 12)]
 
 table, results = engine.simulate_season(teams)

@@ -17,19 +17,17 @@ class Table:
     def print_table(table):
         sorted_table = sorted(table.values(), key=lambda x: (x.points, x.gd, x.gf), reverse=True)
 
-        print("\n=== LEAGUE TABLE ===\n")
-
+        print(f"{'':2} {'Team':20} {'W':>3} {'D':>3} {'L':>3} {'GF':>4} {'GA':>4} {'GD':>5} {'P':>4}")
+        print("-" * 57)
         for i, entry in enumerate(sorted_table, 1):
             print(
-                f"{i}. {entry.team.name:20}"
-                f"W:{entry.wins} "
-                f"D:{entry.draws} "
-                f"L:{entry.losses} "
-                f"GF:{entry.gf} "
-                f"GA:{entry.ga} "
-                f"GD:{entry.gd}"
-                f"  P:{entry.points} "
+                f"{i:2} {entry.team.name:20} "
+                f"{entry.wins:3} {entry.draws:3} {entry.losses:3} "
+                f"{entry.gf:4} {entry.ga:4} {entry.gd:5} {entry.points:4}"
             )
+
+            if i in(4, 6, 17):
+                print("-" * 57)
 
     @staticmethod
     def update_table(table, result):
