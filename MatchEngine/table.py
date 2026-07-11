@@ -13,11 +13,10 @@ class TableEntry:
         return self.gf - self.ga
 
 class Table:
-    @staticmethod
-    def print_table(table):
-        sorted_table = sorted(table.values(), key=lambda x: (x.points, x.gd, x.gf), reverse=True)
+    def __str__(self):
+        sorted_table = sorted(self.values(), key=lambda x: (x.points, x.gd, x.gf), reverse=True)
 
-        print(f"{'':2} {'Team':20} {'W':>3} {'D':>3} {'L':>3} {'GF':>4} {'GA':>4} {'GD':>5} {'P':>4}")
+        print(f"\n{'':2} {'Team':20} {'W':>3} {'D':>3} {'L':>3} {'GF':>4} {'GA':>4} {'GD':>5} {'P':>4}")
         print("-" * 57)
         for i, entry in enumerate(sorted_table, 1):
             print(

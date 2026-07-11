@@ -54,6 +54,7 @@ class MatchEngine:
         for home, away in fixtures:
             result = self.simulate_match(home, away)
             results.append(result)
+            #print(f"{result.home_team} {result.home_goals} : {result.away_goals} {result.away_team}")
             Table.update_table(table, result)
 
         return table, results

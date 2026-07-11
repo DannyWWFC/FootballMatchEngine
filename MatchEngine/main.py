@@ -4,16 +4,11 @@ from collections import defaultdict
 from team import Team
 from engine import MatchEngine
 from table import Table
+from api_service import load_fpl_data
 
 engine = MatchEngine()
 
-with open("leagues/premier_league.json", "r") as f:
-    team_data = json.load(f)
-
-teams = [
-    Team(item["name"], item["strength"])
-    for item in team_data
-]
+repository = load_fpl_data()
 
 tables = []
 title_wins = defaultdict(int)
@@ -21,8 +16,8 @@ relegations = defaultdict(int)
 
 relegation_spots = 3
 
-for i in range (0, 1000):
-    table, results = engine.simulate_season(teams)
+for i in range (0, 50):
+    table, results = engine.simulate_season(repository.get_all_teams())
     tables.append(table)
 
     winner = max(table.values(), key=lambda entry: entry.points)
@@ -46,7 +41,9 @@ for i, table in enumerate(tables, 1):
 
     year = 2026 + i
 
-    print(f"Season {year}/{year+1}: Winner = {winner.team.name} ({winner.points} pts)")
+    #Table.__str__(table)
+
+    print(f"\nSeason {year}/{year+1}: Winner = {winner.team.name} ({winner.points} pts)")
 
 
 print("\n=== TITLE COUNTS ===")

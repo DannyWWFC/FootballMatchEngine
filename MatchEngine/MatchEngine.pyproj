@@ -21,11 +21,14 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="api_service.py" />
     <Compile Include="engine.py" />
     <Compile Include="main.py" />
+    <Compile Include="player.py" />
     <Compile Include="result.py" />
     <Compile Include="table.py" />
     <Compile Include="team.py" />
+    <Compile Include="team_repository.py" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="championship.json" />
